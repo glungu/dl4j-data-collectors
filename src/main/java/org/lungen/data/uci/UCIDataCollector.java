@@ -31,7 +31,7 @@ public class UCIDataCollector {
     public static String[] downloadUCIDataLines() {
         try {
             Document document = Jsoup.connect(URL)
-                    .proxy("genproxy.amdocs.com", 8080)
+                    //.proxy()
                     .followRedirects(true)
                     .validateTLSCertificates(false)
                     .url(URL)

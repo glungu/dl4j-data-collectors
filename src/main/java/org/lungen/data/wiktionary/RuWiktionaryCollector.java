@@ -59,7 +59,7 @@ public class RuWiktionaryCollector {
 
     public Connection connect() {
         return Jsoup.connect(URL)
-                .proxy("genproxy.amdocs.com", 8080)
+                //.proxy()
                 .followRedirects(true)
                 .validateTLSCertificates(false);
     }
