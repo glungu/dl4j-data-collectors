@@ -92,7 +92,14 @@ public class CSVParser {
 
         int colStart = 0;
         int index = 0;
-        ParseType type = ParseType.REGULAR;
+        ParseType type;
+        if (chars[index] == '"' && chars[index + 1] == '{') {
+            type = ParseType.OBJECT;
+        } else if (chars[index] == '"') {
+            type = ParseType.STRING;
+        } else {
+            type = ParseType.REGULAR;
+        }
 
         List<String> values = new ArrayList<>();
 
